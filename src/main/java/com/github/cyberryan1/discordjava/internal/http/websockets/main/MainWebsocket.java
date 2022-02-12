@@ -1,5 +1,6 @@
 package com.github.cyberryan1.discordjava.internal.http.websockets.main;
 
+import com.github.cyberryan1.discordjava.internal.bases.BaseEvent;
 import com.github.cyberryan1.discordjava.internal.http.websockets.WebsocketManager;
 import com.google.gson.Gson;
 import org.java_websocket.client.WebSocketClient;
@@ -49,11 +50,7 @@ public class MainWebsocket extends WebSocketClient {
         OpCodeData opCodeData = gson.fromJson( message, OpCodeData.class );
 
         if ( opCodeData.getOpCode() == 0 ) { // events are sent with opcode 0
-            BaseEventData eventData = gson.fromJson( message, BaseEventData.class );
-            System.out.println( "message == " + message ); // ! debug
-            System.out.println( "type == " + eventData.getType() ); // ! debug
-            System.out.println( "s == " + eventData.getS() ); // ! debug
-            System.out.println( "opcode == " + eventData.getOpCode() ); // ! debug
+            BaseEvent eventData = gson.fromJson( message, BaseEvent.class );
         }
         else {
             for ( int index = msgListeners.size() - 1; index >= 0; index-- ) {
