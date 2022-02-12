@@ -1,7 +1,8 @@
 package com.github.cyberryan1.discordjava.http.websockets.main;
 
 public enum OpCode {
-    
+
+    ZERO ( 0 ),
     ONE ( 1 ),
     TWO ( 2 ),
     THREE ( 3 ),
@@ -12,8 +13,7 @@ public enum OpCode {
     EIGHT ( 8 ),
     NINE ( 9 ),
     TEN ( 10 ),
-    ELEVEN ( 11 ),
-    TWELVE ( 12 );
+    ELEVEN ( 11 );
     
     public final int number;
     
