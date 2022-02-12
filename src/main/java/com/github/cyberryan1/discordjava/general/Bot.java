@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava;
+package com.github.cyberryan1.discordjava.general;
 
 import com.github.cyberryan1.discordjava.internal.JsonBodyHandler;
 import com.github.cyberryan1.discordjava.internal.http.enums.DiscordLinks;
