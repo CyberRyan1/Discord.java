@@ -1,6 +1,6 @@
 package com.github.cyberryan1.discordjava.internal.http.enums;
 
-import com.github.cyberryan1.discordjava.Bot;
+import com.github.cyberryan1.discordjava.general.Bot;
 
 import java.net.URI;
 import java.net.URISyntaxException;
