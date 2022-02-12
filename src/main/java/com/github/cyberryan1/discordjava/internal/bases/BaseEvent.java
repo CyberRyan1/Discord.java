@@ -22,5 +22,5 @@ public class BaseEvent {
         return null;
     }
 
-    public int getOpcode() { return op; }
+    public int getOpCode() { return op; }
 }
