@@ -1,8 +1,8 @@
-package com.github.cyberryan1.discordjava.http.websockets.heartbeat;
+package com.github.cyberryan1.discordjava.internal.http.websockets.heartbeat;
 
-import com.github.cyberryan1.discordjava.http.websockets.WebsocketManager;
-import com.github.cyberryan1.discordjava.http.websockets.main.OpCode;
-import com.github.cyberryan1.discordjava.http.websockets.main.WebsocketMessageHandler;
+import com.github.cyberryan1.discordjava.internal.http.websockets.WebsocketManager;
+import com.github.cyberryan1.discordjava.internal.http.websockets.main.OpCode;
+import com.github.cyberryan1.discordjava.internal.http.websockets.main.WebsocketMessageHandler;
 import com.google.gson.Gson;
 
 import java.util.concurrent.Executors;
@@ -27,6 +27,7 @@ public class Heartbeat {
         WebsocketManager.getMain().addMsgListener( this );
     }
 
+    // TODO add opcode 9 (invalid session) handling
     // TODO if no opcode 11 (heartbeat ACK) is sent in between heartbeats, need to reconnect
 
     /**

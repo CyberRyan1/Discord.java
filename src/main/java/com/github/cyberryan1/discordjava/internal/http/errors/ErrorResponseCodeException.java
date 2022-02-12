@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.http.errors;
+package com.github.cyberryan1.discordjava.internal.http.errors;
 
 public class ErrorResponseCodeException extends RuntimeException {
 

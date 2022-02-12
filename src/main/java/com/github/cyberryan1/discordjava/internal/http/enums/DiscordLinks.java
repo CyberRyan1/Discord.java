@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.http.enums;
+package com.github.cyberryan1.discordjava.internal.http.enums;
 
 import com.github.cyberryan1.discordjava.Bot;
 

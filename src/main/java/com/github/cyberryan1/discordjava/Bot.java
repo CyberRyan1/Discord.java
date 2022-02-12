@@ -1,11 +1,11 @@
 package com.github.cyberryan1.discordjava;
 
-import com.github.cyberryan1.discordjava.http.JsonBodyHandler;
-import com.github.cyberryan1.discordjava.http.enums.DiscordLinks;
-import com.github.cyberryan1.discordjava.http.errors.ErrorResponseCodeException;
-import com.github.cyberryan1.discordjava.http.responses.DiscordGateway;
-import com.github.cyberryan1.discordjava.http.websockets.WebsocketManager;
-import com.github.cyberryan1.discordjava.http.websockets.identify.Identify;
+import com.github.cyberryan1.discordjava.internal.JsonBodyHandler;
+import com.github.cyberryan1.discordjava.internal.http.enums.DiscordLinks;
+import com.github.cyberryan1.discordjava.internal.http.errors.ErrorResponseCodeException;
+import com.github.cyberryan1.discordjava.internal.http.responses.DiscordGateway;
+import com.github.cyberryan1.discordjava.internal.http.websockets.WebsocketManager;
+import com.github.cyberryan1.discordjava.internal.http.websockets.identify.Identify;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

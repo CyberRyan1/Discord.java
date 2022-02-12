@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.http.websockets.heartbeat;
+package com.github.cyberryan1.discordjava.internal.http.websockets.heartbeat;
 
 class HeartbeatServerResponse {
 

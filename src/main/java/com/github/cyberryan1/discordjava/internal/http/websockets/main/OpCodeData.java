@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.http.websockets.main;
+package com.github.cyberryan1.discordjava.internal.http.websockets.main;
 
 class OpCodeData {
     private int op;

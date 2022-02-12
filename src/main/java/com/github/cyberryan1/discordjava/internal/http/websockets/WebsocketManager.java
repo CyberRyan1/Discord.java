@@ -1,7 +1,7 @@
-package com.github.cyberryan1.discordjava.http.websockets;
+package com.github.cyberryan1.discordjava.internal.http.websockets;
 
-import com.github.cyberryan1.discordjava.http.websockets.heartbeat.Heartbeat;
-import com.github.cyberryan1.discordjava.http.websockets.main.MainWebsocket;
+import com.github.cyberryan1.discordjava.internal.http.websockets.heartbeat.Heartbeat;
+import com.github.cyberryan1.discordjava.internal.http.websockets.main.MainWebsocket;
 
 import java.net.URISyntaxException;
 import java.util.concurrent.CountDownLatch;

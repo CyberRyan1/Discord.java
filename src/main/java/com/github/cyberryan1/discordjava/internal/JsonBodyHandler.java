@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.http;
+package com.github.cyberryan1.discordjava.internal;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

@@ -1,6 +1,6 @@
-package com.github.cyberryan1.discordjava.http.websockets.identify;
+package com.github.cyberryan1.discordjava.internal.http.websockets.identify;
 
-import com.github.cyberryan1.discordjava.http.websockets.WebsocketManager;
+import com.github.cyberryan1.discordjava.internal.http.websockets.WebsocketManager;
 
 /**
  * <b>For internal use only</b>

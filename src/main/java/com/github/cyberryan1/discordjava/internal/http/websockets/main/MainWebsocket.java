@@ -1,7 +1,6 @@
-package com.github.cyberryan1.discordjava.http.websockets.main;
+package com.github.cyberryan1.discordjava.internal.http.websockets.main;
 
-import com.github.cyberryan1.discordjava.http.websockets.WebsocketManager;
-import com.github.cyberryan1.discordjava.http.websockets.heartbeat.Heartbeat;
+import com.github.cyberryan1.discordjava.internal.http.websockets.WebsocketManager;
 import com.google.gson.Gson;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft;
@@ -49,13 +48,25 @@ public class MainWebsocket extends WebSocketClient {
         Gson gson = new Gson();
         OpCodeData opCodeData = gson.fromJson( message, OpCodeData.class );
 
-        for ( int index = msgListeners.size() - 1; index >= 0; index-- ) {
-            Object cls = msgListeners.get( index );
-            for ( Method method : cls.getClass().getMethods() ) {
-                if ( method.isAnnotationPresent( WebsocketMessageHandler.class ) && method.getParameterTypes().length == 1 ) {
-                    if ( method.getAnnotation( WebsocketMessageHandler.class ).value().number == opCodeData.getOpCode() ) {
-                        try { method.invoke( cls, message );
-                        } catch ( InvocationTargetException | IllegalAccessException e ) { e.printStackTrace(); }
+        if ( opCodeData.getOpCode() == 0 ) { // events are sent with opcode 0
+            BaseEventData eventData = gson.fromJson( message, BaseEventData.class );
+            System.out.println( "message == " + message ); // ! debug
+            System.out.println( "type == " + eventData.getType() ); // ! debug
+            System.out.println( "s == " + eventData.getS() ); // ! debug
+            System.out.println( "opcode == " + eventData.getOpCode() ); // ! debug
+        }
+        else {
+            for ( int index = msgListeners.size() - 1; index >= 0; index-- ) {
+                Object cls = msgListeners.get( index );
+                for ( Method method : cls.getClass().getMethods() ) {
+                    if ( method.isAnnotationPresent( WebsocketMessageHandler.class ) && method.getParameterTypes().length == 1 ) {
+                        if ( method.getAnnotation( WebsocketMessageHandler.class ).value().number == opCodeData.getOpCode() ) {
+                            try {
+                                method.invoke( cls, message );
+                            } catch ( InvocationTargetException | IllegalAccessException e ) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                 }
             }

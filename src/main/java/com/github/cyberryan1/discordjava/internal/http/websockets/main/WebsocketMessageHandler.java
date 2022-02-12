@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.http.websockets.main;
+package com.github.cyberryan1.discordjava.internal.http.websockets.main;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

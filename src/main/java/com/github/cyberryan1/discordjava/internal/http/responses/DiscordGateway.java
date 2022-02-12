@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.http.responses;
+package com.github.cyberryan1.discordjava.internal.http.responses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
