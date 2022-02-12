@@ -1,4 +1,4 @@
-package com.github.cyberryan1.discordjava.internal.bases;
+package com.github.cyberryan1.discordjava.internal.classes;
 
 import com.github.cyberryan1.discordjava.general.events.handler.EventType;
 
