@@ -11,6 +11,8 @@ public class EventData {
 
     public void setDataString( String dataString ) { this.dataString = dataString; }
 
+    public String getDataString() { return dataString; }
+
     public String getStringType() { return t; }
 
     public EventType getEventType() {
