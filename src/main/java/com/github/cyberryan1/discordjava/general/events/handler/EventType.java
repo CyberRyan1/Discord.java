@@ -1,10 +1,10 @@
 package com.github.cyberryan1.discordjava.general.events.handler;
 
-import com.github.cyberryan1.discordjava.general.events.OnReadyEvent;
+import com.github.cyberryan1.discordjava.general.events.ReadyEvent;
 
 public enum EventType {
 
-    ON_READY ( "READY", OnReadyEvent.class ),
+    ON_READY ( "READY", ReadyEvent.class ),
     ON_GUILD_CREATE ( "GUILD_CREATE", null ), // ! temporarily null
     ON_PRESECE_UPDATE ( "PRESENCE_UPDATE", null ); // ! temporarily null
 
