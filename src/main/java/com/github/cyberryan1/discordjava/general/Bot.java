@@ -18,6 +18,7 @@ public class Bot {
 
     private static String GATEWAY_URL;
 
+    // TODO maybe make the token only sent in the login() method and not stored here?
     private final String TOKEN;
 
     public Bot( String token ) {
