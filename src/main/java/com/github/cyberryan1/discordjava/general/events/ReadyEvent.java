@@ -19,15 +19,15 @@ public class ReadyEvent {
     private static final Gson gson = new Gson();
 
     private final String RAW_DATA;
-    private final DataJSON DATA_JSON;
-    private final DataJSON.Data DATA;
+    private final ReadyEventDataJSON DATA_JSON;
+    private final ReadyEventDataJSON.Data DATA;
 
     private Client client;
     private List<Long> guildIDList;
 
     public ReadyEvent( String data ) {
         RAW_DATA = data;
-        DATA_JSON = gson.fromJson( RAW_DATA, DataJSON.class );
+        DATA_JSON = gson.fromJson( RAW_DATA, ReadyEventDataJSON.class );
         DATA = DATA_JSON.d;
     }
 
@@ -61,7 +61,7 @@ public class ReadyEvent {
 /**
  * Represents the data sent by the discord API for this event
  */
-class DataJSON {
+class ReadyEventDataJSON {
     public String t;
     public int s;
     public int op;
