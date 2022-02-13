@@ -2,7 +2,7 @@ package com.github.cyberryan1.discordjava.internal.classes;
 
 import com.github.cyberryan1.discordjava.general.events.handler.EventType;
 
-public class EventData {
+public class EventData { // TODO rename class to BaseEventData
 
     private transient String dataString;
     private String t; // type of the event
