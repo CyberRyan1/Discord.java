@@ -1,6 +1,6 @@
 package com.github.cyberryan1.discordjava.internal.classes;
 
-public class ActivitiesData {
+public class ActivityData {
     public int type;
     public String state;
     public String name;
@@ -12,7 +12,7 @@ public class ActivitiesData {
     public ActivitiesDataParty party;
     public int flags;
     public String details;
-    public AssetsData assets;
+    public AssetData assets;
 
     static class ActivitiesDataTimestamps {
         public long start;

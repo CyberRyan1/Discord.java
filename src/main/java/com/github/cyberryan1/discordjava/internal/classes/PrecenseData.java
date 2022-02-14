@@ -1,6 +1,6 @@
 package com.github.cyberryan1.discordjava.internal.classes;
 
-public class PresencesData {
+public class PrecenseData {
     public PresencesDataUser user;
     public String status;
     public PresencesDataGame game;
@@ -20,7 +20,7 @@ public class PresencesData {
         public String id;
         public String details;
         public int created_at;
-        public AssetsData assets;
+        public AssetData assets;
 
         static class PresencesDataGameTimestamps {
             public long start;
