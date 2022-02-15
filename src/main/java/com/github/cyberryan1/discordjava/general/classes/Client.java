@@ -63,6 +63,7 @@ public class Client {
      * for more information)</i>
      * @return The public flags for the client
      */
+    // TODO make this return something with a flags class (or something like that)
     public int getFlags() { return flags; }
 
     /**
