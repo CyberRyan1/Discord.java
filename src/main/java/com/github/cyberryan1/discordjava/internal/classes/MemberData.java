@@ -2,6 +2,7 @@ package com.github.cyberryan1.discordjava.internal.classes;
 
 import java.util.List;
 
+// note: Members seem to be guaranteed to not be bots
 public class MemberData {
     public UserData user;
     public List<String> roles;
