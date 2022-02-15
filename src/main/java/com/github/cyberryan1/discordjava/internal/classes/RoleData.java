@@ -14,7 +14,7 @@ public class RoleData {
     public boolean hoist;
     public long color;
 
-    static class RoleDataTags {
+    static public class RoleDataTags {
         public String bot_id;
     }
 }
