@@ -4,6 +4,10 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Contains all the permissions that may be used in a discord guild.
+ * Also has a lot of helper methods, if needed.
+ */
 public enum Permission {
 
     /**
@@ -241,6 +245,11 @@ public enum Permission {
         authenticationRequired = authReq;
     }
 
+    /**
+     * Parses a decimal number (in a {@link String}) and returns a list of permissions that it represents
+     * @param permissions Decimal number representing the permissions (in a {@link String})
+     * @return {@link List} of the permissions represented in the inputted variable
+     */
     public static List<Permission> parsePermissions( String permissions ) {
         BigInteger perms = new BigInteger( permissions );
         return Arrays.stream( Permission.values() )
@@ -249,6 +258,11 @@ public enum Permission {
                 .toList();
     }
 
+    /**
+     * Combines a list of permissions into a single {@link BigInteger}
+     * @param permissions Array of permissions to combine
+     * @return {@link BigInteger} representing the permissions value
+     */
     public static BigInteger getPermissionsValue( Permission ... permissions ) {
         if ( permissions.length == 0 ) { return null; }
         if ( permissions.length == 1 ) { return permissions[0].permissionValue; }
@@ -259,6 +273,11 @@ public enum Permission {
         return toReturn;
     }
 
+    /**
+     * Combines a list of permissions into a single {@link BigInteger}
+     * @param permissions {@link List} of permissions to combine
+     * @return {@link BigInteger} representing the permissions value
+     */
     public static BigInteger getPermissionsValue( List<Permission> permissions ) {
         if ( permissions.size() == 0 ) { return null; }
         if ( permissions.size() == 1 ) { return permissions.get( 0 ).permissionValue; }
@@ -269,8 +288,14 @@ public enum Permission {
         return toReturn;
     }
 
-    public static boolean hasPermission( BigInteger permissionsList, Permission perm ) {
-        return permissionsList.and( perm.permissionValue ).equals( perm.permissionValue );
+    /**
+     * Checks if a permission is in a permission integer
+     * @param permissions {@link BigInteger} of the permissions integer
+     * @param perm {@link Permission} to check
+     * @return True if the permission is in the permission integer, false if not
+     */
+    public static boolean hasPermission( BigInteger permissions, Permission perm ) {
+        return permissions.and( perm.permissionValue ).equals( perm.permissionValue );
     }
 
     private static BigInteger getShift( int shiftBy ) {
