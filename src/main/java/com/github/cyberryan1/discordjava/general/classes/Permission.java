@@ -292,10 +292,30 @@ public enum Permission {
      * Checks if a permission is in a permission integer
      * @param permissions {@link BigInteger} of the permissions integer
      * @param perm {@link Permission} to check
-     * @return True if the permission is in the permission integer, false if not
+     * @return True if the <code>perm</code> parameter's value is in the <code>permissions</code> parameter, false if not
      */
     public static boolean hasPermission( BigInteger permissions, Permission perm ) {
         return permissions.and( perm.permissionValue ).equals( perm.permissionValue );
+    }
+
+    /**
+     * Checks if a permission integer contains all permissions in a permissions array
+     * @param permissions {@link BigInteger} of the permissions integer
+     * @param perms Array of the permissions
+     * @return True if the <code>permissions</code> parameter contains all <code>perms</code>, false if not
+     */
+    public static boolean hasPermissions( BigInteger permissions, Permission ... perms ) {
+        return Arrays.stream( perms ).allMatch( ( p ) -> ( permissions.and( p.permissionValue ).equals( p.permissionValue ) ) );
+    }
+
+    /**
+     * Checks if a permission integer contains all permissions in a permissions array
+     * @param permissions {@link BigInteger} of the permissions integer
+     * @param perms {@link List} of the permissions
+     * @return True if the <code>permissions</code> parameter contains all <code>perms</code>, false if not
+     */
+    public static boolean hasPermissions( BigInteger permissions, List<Permission> perms ) {
+        return perms.stream().allMatch( ( p ) -> ( permissions.and( p.permissionValue ).equals( p.permissionValue ) ) );
     }
 
     private static BigInteger getShift( int shiftBy ) {
